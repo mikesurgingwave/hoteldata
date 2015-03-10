@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="JpG-Qn-1qg">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Table View Controller-->
+        <scene sceneID="7Zg-lM-So9">
+            <objects>
+                <tableViewController id="qhN-51-9mA" customClass="TableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="oSI-vZ-C0u">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="zWJ-bj-aCJ">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zWJ-bj-aCJ" id="R6w-2i-aJA">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="qhN-51-9mA" id="6jm-Qa-gHE"/>
+                            <outlet property="delegate" destination="qhN-51-9mA" id="vzW-oF-rOx"/>
+                        </connections>
+                    </tableView>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <navigationItem key="navigationItem" id="3EZ-Ea-MIp"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Oh-qG-WFz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2900" y="353"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="88a-kb-VLj">
+            <objects>
+                <viewController id="JE2-jI-Dsr" customClass="MapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="l1z-f3-aR5"/>
+                        <viewControllerLayoutGuide type="bottom" id="zkn-kX-BLz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1mJ-0M-w9A">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEB-hB-qjn">
+                                <rect key="frame" x="0.0" y="-35" width="320" height="568"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="wEB-hB-qjn" secondAttribute="trailing" id="RsG-0q-hNP"/>
+                            <constraint firstItem="wEB-hB-qjn" firstAttribute="leading" secondItem="1mJ-0M-w9A" secondAttribute="leading" id="Yca-u6-kc7"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="wEB-hB-qjn" secondAttribute="bottom" constant="35" id="YkA-t8-Xom"/>
+                            <constraint firstItem="wEB-hB-qjn" firstAttribute="top" secondItem="1mJ-0M-w9A" secondAttribute="topMargin" constant="-35" id="bnx-ym-1Db"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Map" image="map_icon.png" id="ex0-a1-3GQ"/>
+                    <connections>
+                        <outlet property="mapView" destination="wEB-hB-qjn" id="5S3-MZ-vUO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G1G-YU-jq2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2368" y="1030"/>
+        </scene>
+        <!--List-->
+        <scene sceneID="UsS-2z-iji">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LPU-Y9-vPa" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="List" image="list_icon.png" id="grf-Qo-C12"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NxM-pN-meq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qhN-51-9mA" kind="relationship" relationship="rootViewController" id="S6g-Mp-BuZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QwH-OO-OAl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2368" y="353"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Qsn-Wq-q4e">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="JpG-Qn-1qg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="aNF-YU-Z2R">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="JE2-jI-Dsr" kind="relationship" relationship="viewControllers" id="AXc-cC-hrr"/>
+                        <segue destination="LPU-Y9-vPa" kind="relationship" relationship="viewControllers" id="cgx-0t-z4P"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lTe-0G-Lhn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1836" y="353"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="list_icon.png" width="30" height="30"/>
+        <image name="map_icon.png" width="30" height="30"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
